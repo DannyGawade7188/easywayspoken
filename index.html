@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Easy Way </title>
+  <link rel="icon" href="images/Logo.png">
+  <link href="style.css" rel="stylesheet">
+  <link href="about.css" rel="stylesheet">
+  <!-- Font Awesome for WhatsApp icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Crimson+Text:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'royal': {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a'
+            },
+            'ocean': {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63'
+            },
+            'emerald': {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b'
+            },
+            'lavender': {
+              50: '#faf5ff',
+              100: '#f3e8ff',
+              200: '#e9d5ff',
+              300: '#d8b4fe',
+              400: '#c084fc',
+              500: '#a855f7',
+              600: '#9333ea',
+              700: '#7c3aed',
+              800: '#6b21a8',
+              900: '#581c87'
+            }
+          },
+          fontFamily: {
+            'sans': ['Inter', 'sans-serif'],
+            'display': ['Playfair Display', 'serif'],
+            'accent': ['Crimson Text', 'serif']
+          },
+          animation: {
+            'wave': 'wave 2s ease-in-out infinite',
+            'float-elegant': 'float-elegant 6s ease-in-out infinite',
+            'shimmer': 'shimmer 2s linear infinite',
+            'typewriter': 'typewriter 4s steps(40) infinite',
+            'fade-slide': 'fade-slide 0.8s ease-out forwards'
+          }
+        }
+      }
+    }
+  </script>
+
+  <script>
+    // Wait for the page to fully load
+    document.addEventListener('DOMContentLoaded', function () {
+      // Select your carousel by ID
+      const carouselElement = document.querySelector('#easyemiaCarousel');
+
+      // Create a new Bootstrap Carousel instance
+      const carousel = new bootstrap.Carousel(carouselElement, {
+        interval: 4000, // Slide every 4000 ms = 4 seconds
+        ride: 'carousel', // Automatically start sliding
+        pause: 'hover' // Pause on mouse hover (optional)
+      });
+    });
+  </script>
+  <!-- AOS Animation CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ===== Header Start ===== -->
+  <div x-data="{ 
+    page: 'home', 
+    darkMode: true, 
+    stickyMenu: false, 
+    navigationOpen: false, 
+    scrollTop: false, 
+    hideTopBar: false 
+  }" x-init="
+    darkMode = JSON.parse(localStorage.getItem('darkMode'));
+    $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)));
+    window.addEventListener('scroll', () => {
+      hideTopBar = window.scrollY > 50; // hide after 50px scroll
+    });
+  " :class="{'b eh': darkMode === true}">
+
+    <div style="background-color: white;">
+
+      <header class="g s r vd ya cj" :class="{ 'hh sm _k bl ll' : stickyMenu }"
+        @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
+        style="background-color: rgb(255, 255, 255);">
+
+        <!-- 🔹 Top Black Bar (Always Visible) -->
+        <div class="bg-dark text-white">
+          <div class="container d-flex justify-content-between align-items-center py-1">
+            <!-- Left side: contact info -->
+            <div style="font-size: 19px;">
+              <small><i class="fa-solid fa-envelope me-2"></i>easywayspokengroup@gmail.com</small>
+              <small class="ms-3"><i class="fa-solid fa-phone me-2"></i> +91 9595753575</small>
+            </div>
+
+            <!-- Right side: social media icons -->
+            <div style="font-size: 17px;">
+              <a href="https://www.facebook.com/ghulesatishR" class="me-3" style="color: #1877F2;" target="_blank"><i
+                  class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/easyway_spoken_english_class?igsh=MTF5cTNiNHI3cTF1eg==" target="_blank"
+                class="me-3" style="color: #E4405F;"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://wa.me/9595753575" class="me-3" style="color: #25D366;" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a href="#" style="color: #0A66C2;"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 🔹 End Top Bar -->
+
+        <!-- 🔹 Main Header -->
+        <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+          <div class="vd to/4 tc wf yf">
+            <a href="index.html" class="holographic-logo">
+              <img class="om" src="images/Gall/Logo.png" alt="Logo Light" style="    height: 109px;" />
+            </a>
+
+            <!-- Hamburger Toggle BTN -->
+            <button class="po rc" @click="navigationOpen = !navigationOpen">
+              <span class="rc i pf re pd">
+                <span class="du-block h q vd yc" style="background: white;">
+                  <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
+                  <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
+                  <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+                </span>
+                <span class="du-block h q vd yc lf">
+                  <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
+                  <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
+                </span>
+              </span>
+            </button>
+            <!-- End Hamburger -->
+          </div>
+
+          <!-- Navigation -->
+          <div class="vd wo/4 sd qo f ho oo wf yf" :class="{ 'd rm sr td ud qg ug jc yh': navigationOpen }"
+            style="justify-content: right;margin-left:20px ;">
+            <nav style="font-size: 20px; font-weight: 900;">
+              <ul class="tc _o sf yo cg ep" style="text-decoration: none !important;">
+                <li><a href="index.html" class="xl" :class="{ 'mk': page === 'home' }"
+                    style="color:black;text-decoration: none !important;">Home</a></li>
+                <li><a href="index.html#features" class="xl"
+                    style="color:black;text-decoration: none !important;">About</a></li>
+                <li><a href="Gallary.html" class="xl" style="color:black;text-decoration: none !important;">Gallery</a>
+                </li>
+                <li><a href="index.html#Testimonials" class="xl"
+                    style="color:black;text-decoration: none !important;">Reviews</a></li>
+                <li><a href="index.html#support" class="xl"
+                    style="color:black;text-decoration: none !important;">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- 🔹 End Main Header -->
+
+      </header>
+    </div>
+  </div>
+  <!-- ===== Header End ===== -->
+
+
+  <main>
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap Carousel -->
+    <div id="easyemiaCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#easyemiaCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#easyemiaCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      </div>
+
+      <!-- Carousel Inner -->
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="padding-top: 6rem;">
+          <img class="d-block w-100" src="images/caurosl/1.png" alt="Image 1" style="object-fit: cover; height: 650px;">
+
+          <!-- Dark overlay -->
+          <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.5);"></div>
+
+          <div class="carousel-caption d-flex flex-column justify-content-center text-start" style="top: 23px;">
+            <div class="container">
+              <div class="col-lg-8">
+                <h6 class="text-warning fw-bold">At Easy Way, Result is Identity.</h6>
+                <h3 class="display-4 text-white fw-bold">Easy Way Spoken English — Where Confidence Begins.</h3>
+                <p class="text-light">Transform your communication, personality, and success.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="padding-top: 6rem;">
+          <img class="d-block w-100" src="images/caurosl/Ca.png" alt="Image 2"
+            style="object-fit: cover; height: 650px;">
+
+          <!-- Dark overlay -->
+          <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.5);"></div>
+
+          <div class="carousel-caption d-flex flex-column justify-content-center text-lg-end text-right"
+            style="top: 0; bottom: 0;">
+            <div class="container">
+              <div class="row justify-content-lg-end justify-content-center">
+                <div class="col-lg-8">
+                  <h6 class="text-warning fw-bold">At Easy Way, Result is Identity.</h6>
+                  <h3 class="display-4 text-white fw-bold">Easy Way Spoken English — Where Confidence Begins.</h3>
+                  <p class="text-light">Transform your communication, personality, and success.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#easyemiaCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#easyemiaCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+    </div>
+
+
+
+
+    <!-- ===== Small Features Start ===== -->
+    <section id="features" style="padding-top: 3rem;padding-bottom: 20px;">
+      <div class="bb ze ki yn 2xl:ud-px-12.5">
+        <div class="tc uf zo xf ap zf bp mq">
+          <!-- Small Features Item -->
+          <div class="animate_top kn to/3 tc cg oq">
+            <div class="tc wf xf cf ae cd rg mh">
+              <img src="images/icon-01.svg" alt="Icon" />
+            </div>
+            <div>
+              <h4 class="ek yj go kk wm xb">Time Flexibility</h4>
+              <p>Improve your English without disturbing your daily routine.</p>
+            </div>
+          </div>
+
+          <!-- Small Features Item -->
+          <div class="animate_top kn to/3 tc cg oq">
+            <div class="tc wf xf cf ae cd rg nh">
+              <img src="images/icon-02.svg" alt="Icon" />
+            </div>
+            <div>
+              <h4 class="ek yj go kk wm xb">One to One Teaching Method</h4>
+              <p>Learn English with 100% personal attention.</p>
+            </div>
+          </div>
+
+          <!-- Small Features Item -->
+          <div class="animate_top kn to/3 tc cg oq">
+            <div class="tc wf xf cf ae cd rg oh">
+              <img src="images/icon-03.svg" alt="Icon" />
+            </div>
+            <div>
+              <h4 class="ek yj go kk wm xb">Team Work</h4>
+              <p>We believe in growing together.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== Small Features End ===== -->
+
+    <section class="about-section" id="about" style="padding: 60px 0;">
+      <div class="container about-content">
+
+        <!-- Heading -->
+        <div class="text-center mb-5 fadeInUp">
+          <h2 class="fw-bold" style="font-size: 2.5rem !important;margin-bottom: 1rem !important;">
+            About Us
+          </h2>
+        </div>
+
+        <!-- ABOUT MAIN BOX WITH IMAGE -->
+        <div class="about-box-section" style="
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 18px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+        max-width: 1100px;
+        margin: 0 auto 50px auto;
+        flex-wrap: wrap;
+    ">
+
+          <!-- Image -->
+          <div class="about-image" style="flex: 1; min-width: 300px;">
+            <img src="images/about.jpg" alt="About Us" style="width: 100%; border-radius: 14px; object-fit: cover;">
+          </div>
+
+          <!-- Text -->
+          <div class="about-text" style="flex: 1; min-width: 300px;">
+            <h3 style="font-size: 26px; font-weight: bold; margin-bottom: 12px;">
+              Easy Way Spoken English Classes – Learning Begins With Us
+            </h3>
+
+            <p style="font-size: 16px; line-height: 1.7; margin-bottom: 16px;">
+              Welcome to Easy Way Spoken English Classes by Satish Sir, Pune’s trusted center for personalised English
+              training.
+              Our one-to-one English coaching is specially designed to meet the unique needs of every learner—students,
+              professionals, homemakers, or beginners.
+            </p>
+
+            <p style="font-size: 16px; line-height: 1.7; margin-bottom: 16px;">
+              We focus on individual guidance, real-life speaking practice, and personal attention—so you improve faster
+              and build confidence in communication.
+              Our flexible timings make learning easy for your daily routine.
+            </p>
+
+            <h4 style="font-size: 20px; font-weight: 600; margin: 15px 0 10px;">Why Students Choose Us:</h4>
+            <ul style="font-size: 16px; line-height: 1.7; padding-left: 18px; margin: 0;">
+              <li><strong>Personalised 1-to-1 training</strong></li>
+              <li><strong>Flexible timing</strong></li>
+              <li><strong>Guaranteed improvement</strong></li>
+            </ul>
+
+            <p style="font-size: 16px; line-height: 1.7; margin-top: 18px;">
+              Our center was founded in 2011 with the vision to bring back the Gurukul-style personal learning
+              method—because real learning happens only when a teacher personally guides a student.
+            </p>
+
+          </div>
+        </div>
+
+        <!-- SECOND ROW: WHO WE ARE + MISSION -->
+        <div class="row g-4">
+
+          <!-- Who We Are -->
+          <div class="col-lg-6 fadeInUp" style="animation-delay: 0.3s;">
+            <div class="card-custom"
+              style="padding: 25px; border-radius: 15px; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+              <h3 class="fw-bold mb-3">
+                <i class="fa-solid fa-users"></i> Who We Are
+              </h3>
+              <p style="font-size: 16px; line-height: 1.6;">
+                We are a passionate team of trainers led by Mr. Satish Ghule, dedicated to helping students overcome
+                hesitation and speak confidently in English.
+                With years of training experience, we ensure that every student achieves real, visible results.
+              </p>
+            </div>
+          </div>
+
+          <!-- Mission -->
+          <div class="col-lg-6 fadeInUp" style="animation-delay: 0.6s;">
+            <div class="card-custom"
+              style="padding: 25px; border-radius: 15px; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+              <h3 class="fw-bold mb-3">
+                <i class="fa-solid fa-bullseye"></i> Our Mission
+              </h3>
+              <p style="font-size: 16px; line-height: 1.6;">
+                Our mission is to empower students, professionals, and homemakers with confident English communication
+                skills so they can succeed in interviews, jobs, business, and daily life.
+                We aim to make English learning simple, practical, and result-oriented for everyone.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- ===== About Start ===== -->
+    <section class="ji gp uq 2xl:ud-py-35 pg">
+      <div class="bb ze ki xn wq">
+        <div class="tc wf gg qq">
+          <!-- About Images -->
+          <div class="animate_left xc gn gg jn/2 i">
+            <div>
+              <!-- <img src="images/shape-05.svg" alt="Shape" class="h -ud-left-5 x" /> -->
+              <img src="images/A7.jpg" alt="About" class="ib" />
+              <img src="images/A4.jpg" alt="About" style="height: 341px;" />
+            </div>
+            <div>
+              <!-- <img src="images/shape-06.svg" alt="Shape" /> -->
+              <img src="images/A3.jpg" alt="About" class="ob gb" />
+
+            </div>
+          </div>
+
+          <!-- About Content -->
+          <div class="animate_right jn/2">
+            <h4 class="ek yj mk gb">Why Choose Us</h4>
+            <h2 class="fk vj zp pr kk wm qb">Gain the confidence to express yourself anywhere</h2>
+            <p class="uo" style="font-size: 18px;">
+              ✅ <span style="font-weight: 700;">One to One Personal Guidance - </span> Every student gets personal
+              attention.<br />
+              ✅ <span style="font-weight: 700;">Personal Mentorship - </span> Students gain motivation and skill
+              improvement.<br />
+              ✅ <span style="font-weight: 700;">Flexible Schedules –</span> Learn at your convenience.<br />
+              ✅ <span style="font-weight: 700;">Customized Courses –</span> Interview, Job, Business, or Daily
+              Conversation.<br />
+              ✅ <span style="font-weight: 700;"> Guaranteed Progres –</span> Guaranteed improvement, no extra fees.</p>
+
+            <a href="images/Video-782.mp4" data-fslightbox class="vc wf hg mb">
+              <span class="tc wf xf be dd rg i gh ua">
+                <span class="nf h vc yc vd rg gh qk -ud-z-1"></span>
+                <img src="images/icon-play.svg" alt="Play" />
+              </span>
+              <span class="kk" style="font-weight: 700;">SEE HOW WE WORK</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== About End ===== -->
+
+
+
+    <section class="py-24 bg-white communication-pattern" style="    padding-top: 3rem;">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16 aos-init aos-animate" data-aos="fade-up">
+          <h2 class="text-4xl lg:text-6xl font-black mb-6 font-display">
+            Your <span
+              class="bg-gradient-to-r from-ocean-500 to-emerald-500 bg-clip-text text-transparent">Communication</span>
+            Transformation
+          </h2>
+          <p class="text-xl text-gray-600 max-w-4xl mx-auto font-accent">
+            From hesitant speaker to confident communicator - a comprehensive journey designed for every proficiency
+            level
+          </p>
+        </div>
+
+        <div class="fluency-path max-w-7xl mx-auto">
+          <div class="grid md:grid-cols-5 gap-8">
+            <!-- Foundation Level -->
+            <div class="fluency-card rounded-3xl p-8 text-center card-elegant aos-init aos-animate" data-aos="fade-up"
+              data-aos-delay="100" style="transform: translateY(0px) scale(1);">
+              <div class="diamond w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                <i class="fas fa-seedling text-2xl text-white"></i>
+              </div>
+              <h3 class="font-bold text-xl mb-3 font-display">Foundation</h3>
+              <p class="text-sm text-gray-600 mb-4">Basic vocabulary, pronunciation, and simple conversations for
+                beginners</p>
+              <div class="section-elegant mb-2"></div>
+              <div class="text-xs text-gray-500">Level A1-A2</div>
+            </div>
+
+            <!-- Intermediate -->
+            <div class="fluency-card rounded-3xl p-8 text-center card-elegant aos-init aos-animate" data-aos="fade-up"
+              data-aos-delay="200" style="transform: translateY(0px) scale(1);">
+              <div
+                class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-comments text-2xl text-white"></i>
+              </div>
+              <h3 class="font-bold text-xl mb-3 font-display">Intermediate</h3>
+              <p class="text-sm text-gray-600 mb-4">Fluent conversations, grammar mastery, and workplace communication
+              </p>
+              <div class="section-elegant mb-2"></div>
+              <div class="text-xs text-gray-500">Level B1-B2</div>
+            </div>
+
+            <!-- Advanced Speaking -->
+            <div class="fluency-card rounded-3xl p-8 text-center card-elegant aos-init aos-animate" data-aos="fade-up"
+              data-aos-delay="300" style="transform: translateY(0px) scale(1);">
+              <div
+                class="w-20 h-20 bg-gradient-to-br from-lavender-500 to-lavender-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-microphone text-2xl text-white"></i>
+              </div>
+              <h3 class="font-bold text-xl mb-3 font-display">Advanced Speaking</h3>
+              <p class="text-sm text-gray-600 mb-4">Public speaking, presentations, debates, and leadership
+                communication</p>
+              <div class="section-elegant mb-2"></div>
+              <div class="text-xs text-gray-500">Level C1</div>
+            </div>
+
+            <!-- Professional Excellence -->
+            <div class="fluency-card rounded-3xl p-8 text-center card-elegant aos-init aos-animate" data-aos="fade-up"
+              data-aos-delay="400" style="transform: translateY(0px) scale(1);">
+              <div
+                class="w-20 h-20 bg-gradient-to-br from-royal-500 to-royal-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-briefcase text-2xl text-white"></i>
+              </div>
+              <h3 class="font-bold text-xl mb-3 font-display">Professional</h3>
+              <p class="text-sm text-gray-600 mb-4">Business English, interview skills, and corporate communication
+                excellence</p>
+              <div class="section-elegant mb-2"></div>
+              <div class="text-xs text-gray-500">Level C2</div>
+            </div>
+
+            <!-- Global Opportunities -->
+            <div class="fluency-card rounded-3xl p-8 text-center card-elegant aos-init aos-animate" data-aos="fade-up"
+              data-aos-delay="500">
+              <div
+                class="w-20 h-20 bg-gradient-to-br from-ocean-500 to-ocean-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-globe text-2xl text-white"></i>
+              </div>
+              <h3 class="font-bold text-xl mb-3 font-display">Global Success</h3>
+              <p class="text-sm text-gray-600 mb-4">International opportunities, immigration success, and global career
+                growth</p>
+              <div class="section-elegant mb-2"></div>
+              <div class="text-xs text-gray-500">Native Level</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+    <!-- ===== Services Start ===== -->
+    <section class="lj tp kr" style="background-color: aliceblue;">
+      <!-- Section Title Start -->
+      <div
+        x-data="{ sectionTitle: `We Offer The Best Quality Service for You`, sectionTitleText: `At Easy Way Spoken English Classes, we don’t just teach English — we help you speak it with confidence. With personal guidance, flexible timings, and result-oriented training, we make learning English easy, enjoyable, and effective for everyone — students, professionals, and homemakers alike.`}">
+        <div class="animate_top bb ze rj ki xn vq">
+          <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b">
+          </h2>
+          <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+        </div>
+
+
+      </div>
+      <!-- Section Title End -->
+
+      <div class="bb ze ki xn yq mb en">
+        <div class="wc qf pn xo ng">
+          <!-- Service Item -->
+          <div class="animate_top sg oi pi zq ml il am cn _m">
+            <img src="images/icon-04.svg" alt="Icon" />
+            <h4 class="ek zj kk wm nb _b">Personal Attention</h4>
+            <p>We provide one-to-one guidance for every student, focusing on individual strengths, weaknesses, and
+              learning pace. Each session is designed to make you feel comfortable and confident while speaking English.
+            </p>
+          </div>
+
+          <!-- Service Item -->
+          <div class="animate_top sg oi pi zq ml il am cn _m">
+            <img src="images/icon-05.svg" alt="Icon" />
+            <h4 class="ek zj kk wm nb _b">Flexible Timings</h4>
+            <p>We understand your busy schedule. That’s why we offer flexible class timings, allowing you to learn
+              English at your convenience — morning, afternoon, or evening.</p>
+          </div>
+
+          <!-- Service Item -->
+          <div class="animate_top sg oi pi zq ml il am cn _m">
+            <img src="images/icon-06.svg" alt="Icon" />
+            <h4 class="ek zj kk wm nb _b">Customized Training</h4>
+            <p>Whether you want to improve English for a job interview, business communication, studies, or daily
+              conversation, we design a course that fits your exact needs and goals.</p>
+          </div>
+
+          <!-- Service Item -->
+          <div class="animate_top sg oi pi zq ml il am cn _m">
+            <img src="images/icon-07.svg" alt="Icon" />
+            <h4 class="ek zj kk wm nb _b">Proven Results </h4>
+            <p>Our students start speaking confidently within a few weeks of training. We ensure visible improvement in
+              vocabulary, grammar, pronunciation, and fluency.</p>
+          </div>
+
+          <!-- Service Item -->
+          <div class="animate_top sg oi pi zq ml il am cn _m">
+            <img src="images/icon-05.svg" alt="Icon" />
+            <h4 class="ek zj kk wm nb _b">Fully Customizable</h4>
+            <p>From beginner to advanced levels, each course is customized as per your current level and target. You can
+              choose from grammar-focused, speaking-focused, or complete personality development modules.</p>
+          </div>
+
+          <!-- Service Item -->
+          <div class="animate_top sg oi pi zq ml il am cn _m">
+            <img src="images/icon-06.svg" alt="Icon" />
+            <h4 class="ek zj kk wm nb _b">Regular Updates</h4>
+            <p>We provide continuous progress updates and constructive feedback after every stage. You’ll always know
+              your strengths and what areas to improve.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== Services End ===== -->
+
+
+
+    <!-- ===== Projects Start ===== -->
+    <section class="pg pj vp mr oj wp nr">
+      <!-- Section Title Start -->
+      <div x-data="{ sectionTitle: `We Offer Great Affordable Premium Prices.`, sectionTitleText: `Top-quality English training at student-friendly prices.
+Premium learning without the premium cost.`}">
+        <div class="animate_top bb ze rj ki xn vq">
+          <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b">
+          </h2>
+          <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+        </div>
+
+
+      </div>
+      <!-- Section Title End -->
+
+      <div class="bb ze ki xn 2xl:ud-px-0 jb" x-data="{filterTab: 1}">
+
+
+        <!-- Projects item wrapper -->
+        <div class="projects-wrapper tc -ud-mx-5">
+          <div class="project-sizer"></div>
+          <!-- Project Item -->
+          <div class="project-item wi fb vd jn/2 to/3 branding ecommerce">
+            <div class="c i pg sg z-1">
+              <img src="images/Gall/6.jpeg" alt="Project" />
+
+              <div class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10">
+                <a href="Gallary.html">
+                  <h4 class="ek tj kk hc">Click To More</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Project Item -->
+          <div class="project-item wi fb vd jn/2 to/3 branding ecommerce">
+            <div class="c i pg sg z-1">
+              <img src="images/Gall/16.jpeg" alt="Project" />
+
+              <div class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10">
+                <a href="Gallary.html">
+                  <h4 class="ek tj kk hc">Click To More</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Project Item -->
+          <div class="project-item wi fb vd jn/2 to/3 digital">
+            <div class="c i pg sg z-1">
+              <img src="images/Gall/9.jpeg" alt="Project" />
+
+              <div class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10">
+                <a href="Gallary.html">
+                  <h4 class="ek tj kk hc">Click To More</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </section>
+    <!-- ===== Projects End ===== -->
+
+
+
+    <!-- ===== Counter Start ===== -->
+    <section class="i pg qh rm ji hp">
+      <img src="images/shape-11.svg" alt="Shape" class="of h ga ha ke" />
+      <img src="images/shape-07.svg" alt="Shape" class="h ia o ae jf" />
+      <img src="images/shape-14.svg" alt="Shape" class="h ja ka" />
+      <img src="images/shape-15.svg" alt="Shape" class="h q p" />
+
+      <div class="bb ze i va ki xn br">
+        <div class="tc uf sn tn xf un gg">
+          <!-- <div class="animate_top me/5 ln rj">
+            <h2 class="gk vj zp or kk wm hc">785</h2>
+            <p class="ek bk aq">Global Brands</p>
+          </div> -->
+          <div class="animate_top me/5 ln rj">
+            <h2 style="font-size: 47px;font-weight: bold;">4.9</h2>
+            <p class="ek bk aq">Google Rating<span
+                style="color: gold; font-size: 28px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </p>
+          </div>
+          <div class="animate_top me/5 ln rj">
+            <h2 class="gk vj zp or kk wm hc">10+</h2>
+            <p class="ek bk aq">Winning Award</p>
+          </div>
+          <div class="animate_top me/5 ln rj">
+            <h2 class="gk vj zp or kk wm hc">4000+</h2>
+            <p class="ek bk aq">Happy Students</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== Counter End ===== -->
+
+    <script>
+      const counters = document.querySelectorAll(".gk.vj.zp.or.kk.wm.hc");
+
+      counters.forEach(counter => {
+        let fullText = counter.innerText.trim();
+        let hasPlus = fullText.includes("+");
+        let target = parseInt(fullText);
+
+        function startCounting() {
+          let count = 0;
+
+          function updateCounter() {
+            if (count < target) {
+              count += Math.ceil(target / 200);
+              if (count > target) count = target;
+
+              counter.innerText = hasPlus ? count : count.toString();
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.innerText = hasPlus ? target + "+" : target;
+
+              // Restart counting after 5 seconds
+              setTimeout(() => {
+                startCounting();
+              }, 5000);
+            }
+          }
+
+          updateCounter();
+        }
+
+        startCounting();
+      });
+    </script>
+
+
+
+
+    <!-- ===== Student Start ===== -->
+    <section class="hr py-5" id="Testimonials">
+      <!-- Section Title Start -->
+      <div class="text-center mb-5">
+        <h2 class="fw-bold fs-1 text-dark">Students Testimonials</h2>
+        <p class="text-muted fs-5">
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking
+          at its layout. The point of using.
+        </p>
+      </div>
+      <!-- Section Title End -->
+
+      <div class="container">
+        <div class="row g-4">
+
+          <!-- Testimonial 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-0 h-100 p-4">
+              <div class="text-center mb-3">
+                <img src="images/t555.jpg" alt="User" class="rounded-circle testimonial-img" width="100">
+              </div>
+              <p class="text-muted">
+                The only word to describe about this class is "Excellent ". Easy Way Spoken English Class is the best
+                class to improve your speaking skills.
+                <span class="more-text" style="display: none;">
+                  You can find improvement in yourself after joining the class. The group discussions and debates are
+                  very useful. Even if you don't have basic knowledge of English then no problem teachers will guide you
+                  properly.
+                  Students and teachers everyone is friendly and helpful.
+                  Special thanks to always supportive Sathish Sir 😊
+
+                </span>
+                <a href="javascript:void(0);" class="read-more-btn text-primary">Read more</a>
+              </p>
+              <h5 class="fw-bold text-center mt-3">Keshav Roy</h5>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-0 h-100 p-4">
+              <div class="text-center mb-3">
+                <img src="images/t4.jpeg" alt="User" class="rounded-circle testimonial-img" width="100">
+              </div>
+              <p class="text-muted">
+                My experience about this course is most useful for daily conversation. As you know English is
+                global language and it is necessary for
+                <span class="more-text" style="display: none;">
+                  interviews Considering all those necessary this Institute helps you a lot. Teaching methods are easy
+                  and
+                  effective like
+                  one-to-one sessions, group discussions, debates, and stage activities. This class truly boosts your
+                  confidence!
+                </span>
+                <a href="javascript:void(0);" class="read-more-btn text-primary">Read more</a>
+              </p>
+              <h5 class="fw-bold text-center mt-3">Priyanka Pawar</h5>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-0 h-100 p-4">
+              <div class="text-center mb-3">
+                <img src="images/t1.png" alt="User" class="rounded-circle testimonial-img" width="100">
+              </div>
+              <p class="text-muted">
+                Easy Way Spoken English transformed my English language skills! I couldn't speak English before
+                joining, but now I speak confidently.
+                <span class="more-text" style="display: none;">
+                  The teaching method is excellent, and the supportive environment truly enhances the learning
+                  experience.
+                  Highly recommended!
+                </span>
+                <a href="javascript:void(0);" class="read-more-btn text-primary">Read more</a>
+              </p>
+              <h5 class="fw-bold text-center mt-3">Vaibhav Kalamkar</h5>
+            </div>
+          </div>
+
+          <!-- Testimonial 4 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-0 h-100 p-4">
+              <div class="text-center mb-3">
+                <img src="images/t6.jpg" alt="User" class="rounded-circle testimonial-img" width="100">
+              </div>
+              <p class="text-muted">
+                Joining Easy Way Spoken English Class by Satish Sir was a turning point in my life. I gained not
+                just knowledge, but real confidence.
+                <span class="more-text" style="display: none;">
+                  Thanks to this class, I was able to crack interviews that once felt impossible! The teaching style is
+                  friendly,
+                  patient, and highly effective.
+                </span>
+                <a href="javascript:void(0);" class="read-more-btn text-primary">Read more</a>
+              </p>
+              <h5 class="fw-bold text-center mt-3">Pankaj Bankar</h5>
+            </div>
+          </div>
+
+          <!-- Testimonial 5 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-0 h-100 p-4">
+              <div class="text-center mb-3">
+                <img src="images/t3.jpeg" alt="User" class="rounded-circle testimonial-img" width="100">
+              </div>
+              <p class="text-muted">
+                The class was amazing! Every student is taught with the idea that everyone can understand English.
+                <span class="more-text" style="display: none;">
+                  My children, aged 9 and 12, now speak and read English very well. The environment is friendly and
+                  motivating.
+                </span>
+                <a href="javascript:void(0);" class="read-more-btn text-primary">Read more</a>
+              </p>
+              <h5 class="fw-bold text-center mt-3">Sneha Khandagle</h5>
+            </div>
+          </div>
+
+          <!-- Testimonial 6 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm border-0 h-100 p-4">
+              <div class="text-center mb-3">
+                <img src="images/t2.jpeg" alt="User" class="rounded-circle testimonial-img" width="100">
+              </div>
+              <p class="text-muted">
+                I want to thank Satish Sir who built my confidence in English. The way he teaches is truly the
+                easy way to learn English.
+                <span class="more-text" style="display: none;">
+                  The methods are practical and effective for everyone — join without hesitation if you want to improve
+                  your English speaking skills.
+                </span>
+                <a href="javascript:void(0);" class="read-more-btn text-primary">Read more</a>
+              </p>
+              <h5 class="fw-bold text-center mt-3">Rahul Gole</h5>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- ===== Testimonials End ===== -->
+
+    <!-- ✅ Script for Multiple Read More/Read Less -->
+    <script>
+      document.querySelectorAll(".read-more-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const moreText = this.previousElementSibling;
+          if (moreText.style.display === "none" || moreText.style.display === "") {
+            moreText.style.display = "inline";
+            this.textContent = " Read less";
+          } else {
+            moreText.style.display = "none";
+            this.textContent = " Read more";
+          }
+        });
+      });
+    </script>
+
+
+
+
+
+    <!-- ===== Contact Start ===== -->
+    <section id="support" class="i pg fh rm ji gp uq">
+      <!-- Bg Shapes -->
+      <img src="images/shape-06.svg" alt="Shape" class="h aa y" />
+      <!-- <img src="images/shape-03.svg" alt="Shape" class="h ca u" /> -->
+      <img src="images/shape-07.svg" alt="Shape" class="h w da ee" />
+      <img src="images/shape-12.svg" alt="Shape" class="h p s" />
+      <img src="images/shape-13.svg" alt="Shape" class="h r q" />
+
+      <!-- Section Title Start -->
+      <div x-data="{ sectionTitle: `Let’s Stay Connected`, sectionTitleText: `Have questions? We’re just a message away.
+Reach out, enquire, and start learning with confidence`}">
+        <div class="animate_top bb ze rj ki xn vq">
+          <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b">
+          </h2>
+          <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+        </div>
+
+
+      </div>
+      <!-- Section Title End -->
+
+      <div class="i va bb ye ki xn wq jb mo">
+        <div class="tc uf sn tf rn un zf xl:gap-10">
+          <div class="animate_top w-full mn/5 to/3 vk sg hh sm yh rq i pg">
+            <!-- Bg Shapes -->
+            <img src="images/shape-03.svg" alt="Shape" class="h la x wd" />
+            <img src="images/shape-06.svg" alt="Shape" class="h la ma ne kf" />
+
+            <div class="fb">
+              <h4 class="wj kk wm cc">Email Address</h4>
+              <p><a href="#!">easywayspokengroup@gmail.com</a></p>
+            </div>
+            <div class="fb">
+              <h4 class="wj kk wm cc">Office Location</h4>
+              <p> 2nd Floor, Gurukrupa Apartment, 29/3/4, Pune - Satara Rd, opposite HP Petrol Pump, near HDFC Bank,
+                Chitanya Nagar, Kala Nagar, Balaji Nagar, Pune, Maharashtra 411043</p>
+            </div>
+            <div class="fb">
+              <h4 class="wj kk wm cc">Phone Number</h4>
+              <p><a href="#!">+91 9595753575</a></p>
+            </div>
+
+
+            <span class="rc nd rh tm lc fb"></span>
+            <div>
+              <h4 class="wj kk wm qb">Social Media</h4>
+              <ul class="tc wf fg">
+                <li>
+                  <a href="#!" class="c tc wf xf ie ld rg ml il tl">
+                    <!-- Facebook -->
+                    <svg class="th lm ml il" width="11" height="20" viewBox="0 0 11 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.83366 11.3752H9.12533L10.042 7.7085H6.83366V5.87516C6.83366 4.931 6.83366 4.04183 8.667 4.04183H10.042V0.96183C9.74316 0.922413 8.61475 0.833496 7.42308 0.833496C4.93433 0.833496 3.16699 2.35241 3.16699 5.14183V7.7085H0.416992V11.3752H3.16699V19.1668H6.83366V11.3752Z"
+                        fill="#1877F2" />
+                    </svg>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.instagram.com/easyway_spoken_english_class" target="_blank"
+                    class="c tc wf xf ie ld rg ml il tl">
+                    <!-- Instagram -->
+                    <svg class="th lm ml il" width="20" height="20" viewBox="0 0 512 512"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M349.33 69.33H162.67C103.47 69.33 69.33 103.47 69.33 162.67v186.67c0 59.2 34.14 93.34 93.34 93.34h186.67c59.2 0 93.33-34.14 93.33-93.34V162.67c0-59.2-34.13-93.34-93.34-93.34zM464 162.67c0 67.47-54.87 122.33-122.33 122.33H170.33C102.87 285 48 230.13 48 162.67V162.67C48 95.2 102.87 40.33 170.33 40.33h171.33C409.13 40.33 464 95.2 464 162.67z"
+                        fill="#E1306C" />
+                      <circle cx="256" cy="162.67" r="44.8" fill="#E1306C" />
+                      <circle cx="349.33" cy="116.67" r="11.33" fill="#E1306C" />
+                    </svg>
+                  </a>
+                </li>
+
+
+                <li>
+                  <a href="#!" class="c tc wf xf ie ld rg ml il tl">
+                    <!-- LinkedIn -->
+                    <svg class="th lm ml il" width="19" height="18" viewBox="0 0 19 18"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M4.36198 2.58327C4.36174 3.0695 4.16835 3.53572 3.82436 3.87937C3.48037 4.22301 3.01396 4.41593 2.52773 4.41569C2.0415 4.41545 1.57528 4.22206 1.23164 3.87807C0.887991 3.53408 0.69507 3.06767 0.695313 2.58144C0.695556 2.09521 0.888943 1.62899 1.23293 1.28535C1.57692 0.941701 2.04333 0.748781 2.52956 0.749024C3.01579 0.749267 3.48201 0.942654 3.82566 1.28664C4.1693 1.63063 4.36222 2.09704 4.36198 2.58327ZM4.41698 5.77327H0.750313V17.2499H4.41698V5.77327ZM10.2103 5.77327H6.56198V17.2499H10.1736V11.2274C10.1736 7.87244 14.5461 7.56077 14.5461 11.2274V17.2499H18.167V9.98077C18.167 4.32494 11.6953 4.53577 10.1736 7.31327L10.2103 5.77327Z"
+                        fill="#0A66C2" />
+                    </svg>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://wa.me/919923920856" target="_blank" class="c tc wf xf ie ld rg ml il tl">
+                    <!-- WhatsApp -->
+                    <svg class="th lm ml il" width="22" height="22" viewBox="0 0 32 32"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.027 3C9.39 3 4 8.39 4 15.027c0 2.647.78 5.082 2.12 7.145L4 29l7.03-2.086c1.95 1.067 4.18 1.66 6.497 1.66 6.637 0 12.027-5.39 12.027-12.027C29.554 8.39 22.664 3 16.027 3zm0 21.854c-2.02 0-3.99-.59-5.68-1.706l-.406-.257-4.17 1.24 1.24-4.057-.267-.42c-1.203-1.89-1.84-4.07-1.84-6.34 0-6.183 5.033-11.216 11.216-11.216s11.216 5.033 11.216 11.216c0 6.183-5.033 11.216-11.216 11.216zm6.16-8.33c-.337-.168-2.003-.99-2.316-1.104-.312-.115-.54-.168-.767.168-.228.337-.88 1.104-1.08 1.33-.2.223-.397.252-.734.084-.337-.168-1.422-.524-2.708-1.67-1-.893-1.675-1.997-1.872-2.334-.196-.337-.021-.518.147-.686.152-.152.337-.396.505-.594.168-.2.224-.337.337-.562.112-.223.056-.42-.028-.59-.084-.168-.767-1.85-1.052-2.537-.276-.664-.556-.575-.767-.586-.196-.01-.42-.01-.646-.01s-.59.084-.897.42c-.308.337-1.174 1.148-1.174 2.796s1.202 3.243 1.37 3.467c.168.223 2.367 3.61 5.74 5.06.802.345 1.426.551 1.912.704.803.256 1.534.22 2.114.134.646-.097 2.003-.82 2.286-1.61.28-.79.28-1.47.196-1.61-.084-.14-.308-.224-.646-.393z"
+                        fill="#25D366" />
+                    </svg>
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="animate_top w-full nn/5 vo/3 vk sg hh sm yh tq">
+            <form onsubmit="sendToWhatsApp(event)">
+              <div class="tc sf yo ap zf ep qb">
+                <div class="vd to/2">
+                  <label class="rc ac" for="fullname">Full name</label>
+                  <input type="text" name="fullname" id="fullname" placeholder="Devid Wonder"
+                    class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" required />
+                </div>
+
+                <div class="vd to/2">
+                  <label class="rc ac" for="email">Email address</label>
+                  <input type="email" name="email" id="email" placeholder="example@gmail.com"
+                    class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" required />
+                </div>
+              </div>
+
+              <div class="tc sf yo ap zf ep qb">
+                <div class="vd to/2">
+                  <label class="rc ac" for="phone">Phone number</label>
+                  <input type="text" name="phone" id="phone" placeholder="+009 3342 3432"
+                    class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" required />
+                </div>
+
+                <div class="vd to/2">
+                  <label class="rc ac" for="subject">Subject</label>
+                  <input type="text" name="subject" id="subject" placeholder="Type your subject"
+                    class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" required />
+                </div>
+              </div>
+
+              <div class="fb">
+                <label class="rc ac" for="message">Message</label>
+                <textarea placeholder="Message" rows="4" name="message" id="message"
+                  class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 ci" required></textarea>
+              </div>
+
+              <div class="tc xf">
+                <button class="btn-send">
+                  <div class="icon-box-1">
+                    <div class="icon-box-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path fill="currentColor"
+                          d="M1.946 9.315c-.522-.174-.527-.455.10-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                        </path>
+                      </svg>
+                    </div>
+                  </div>
+                  <span class="btn-text">Send</span>
+                </button>
+
+              </div>
+
+            </form>
+          </div>
+
+          <script>
+            function sendToWhatsApp(event) {
+              event.preventDefault();
+
+              let fullname = document.getElementById("fullname").value;
+              let email = document.getElementById("email").value;
+              let phone = document.getElementById("phone").value;
+              let subject = document.getElementById("subject").value;
+              let message = document.getElementById("message").value;
+
+              let whatsappNumber = "+919923920856"; // Replace with your WhatsApp number (with country code, no + or spaces)
+
+              let url = "https://wa.me/" + whatsappNumber + "?text="
+                + "*New Enquiry*" + "%0a%0a"
+                + "*Name:* " + fullname + "%0a"
+                + "*Email:* " + email + "%0a"
+                + "*Phone:* " + phone + "%0a"
+                + "*Subject:* " + subject + "%0a"
+                + "*Message:* " + message;
+
+              window.open(url, "_blank").focus();
+            }
+          </script>
+
+        </div>
+      </div>
+    </section>
+    <!-- ===== Contact End ===== -->
+    <div style="width: 100%; height: 400px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4500.4867386786245!2d73.85521375672006!3d18.463574881345117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eab91dae0fe9%3A0x4a5426b36491a8d8!2sEasy%20Way%20Spoken%20English%20Class!5e0!3m2!1sen!2sin!4v1759387351812!5m2!1sen!2sin"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+
+    <!-- Floating Call Icon -->
+    <a href="tel:+91 9595753575" class="call-float">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+
+    <a href="https://wa.me/919595753575" class="whatsapp-float" target="_blank" style="    width: 50px;
+    height: 50px;">
+      <i class="fa-brands fa-whatsapp" style="padding-bottom: 15px;"></i>
+    </a>
+
+
+    <!-- ===== CTA End ===== -->
+  </main>
+  <!-- ===== Footer Start ===== -->
+  <footer style="    background: #626a72;color: white;">
+    <div class="bb ze ki xn 2xl:ud-px-0">
+      <!-- Footer Top -->
+      <div class="gp">
+        <div class="tc uf ap gg fp grid grid-cols-1 md:grid-cols-4 gap-10">
+
+          <!-- Logo + Intro -->
+          <div class="animate_top zd/2 to/4 flex flex-col items-start">
+
+            <!-- Logo -->
+            <a href="index.html" class="mb-4">
+              <img src="images/Gall/Logo.png" alt="Logo" class=" h-auto" style="    width: 12rem;" />
+            </a>
+
+            <!-- Text -->
+            <p class="lc text-white leading-relaxed text-[15px] max-w-sm">
+              We don't just teach English — we build confidence, personality,
+              and communication skills that help you grow in your career,
+              studies, and daily life.
+            </p>
+
+            <ul class="mt-3 text-white leading-relaxed text-[15px] space-y-1 list-disc list-inside">
+              <li><strong>Personalised 1-to-1 training</strong></li>
+              <li><strong>Flexible timing</strong></li>
+              <li><strong>Guaranteed improvement</strong></li>
+            </ul>
+
+          </div>
+
+
+
+          <!-- Quick Links -->
+          <div class="vd ro tc sf rn un gg vn">
+            <div class="animate_top">
+              <h4 class="wm tj ec">Quick Links</h4>
+
+              <ul class="mt-4 space-y-2">
+                <li><a href="index.html" class="sc xl vb">Home</a></li>
+                <li><a href="index.html#features" class="sc xl vb">About</a></li>
+                <li><a href="Gallary.html" class="sc xl vb">Gallery</a></li>
+                <li><a href="index.html#Testimonials" class="sc xl vb">Testimonial</a></li>
+                <li><a href="index.html#support" class="sc xl vb">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div class="vd ro tc sf rn un gg vn">
+            <div class="animate_top">
+              <h4 class="wm tj ec">Contact</h4>
+
+              <ul class="mt-4 space-y-3 text-white">
+                <li class="flex items-start gap-2">
+                  <i class="fa fa-map-marker text-yellow-400 mt-1"></i>
+                  <span>Easy Way Spoken English Class
+                    2nd Floor, Gurukrupa Apartment, Balaji Nagar, Pune, Maharashtra 411043</span>
+                </li>
+
+                <li class="flex items-center gap-2">
+                  <i class="fa fa-phone text-yellow-400"></i>
+                  <a href="tel:+919876543210" class="hover:text-yellow-300">+91 9595753575</a>
+                </li>
+
+                <li class="flex items-center gap-2">
+                  <i class="fa fa-envelope text-yellow-400"></i>
+                  <a href="mailto:info@example.com" class="hover:text-yellow-300">easywayspokengroup@gmail.com</a>
+                </li>
+
+                <li class="flex items-center gap-2">
+                  <i class="fa fa-globe text-yellow-400"></i>
+                  <a href="#" class="hover:text-yellow-300" target="_blank">www.easywayspoken.com</a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+          <!-- Timing -->
+          <div class="vd ro tc sf rn un gg vn">
+            <div class="animate_top">
+              <h4 class="wm tj ec">Timing</h4>
+
+              <ul class="mt-4 space-y-3 text-white">
+                <li class="flex items-start gap-2">
+                  <i class="fa fa-clock text-yellow-400 mt-1"></i>
+                  <span>
+                    Monday to Friday: 8 AM – 8 PM <br>
+                    Sunday: Appointment Only
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- Footer Top -->
+
+      <!-- Footer Bottom -->
+      <div class="bh ch pm tc uf sf yo wf xf ap cg fp bj">
+        <div class="animate_top text-center text-white">
+          © 2025 Easy Way Spoken English Classes by Satish Sir
+          All Rights Reserved.
+        </div>
+
+        <div class="animate_top text-center text-white mt-2">
+          <p>Designed & Developed by <strong>Dnyaneshwar Gawade</strong></p>
+        </div>
+      </div>
+      <!-- Footer Bottom -->
+
+    </div>
+  </footer>
+
+  <!-- ===== Footer End ===== -->
+
+  <!-- ====== Back To Top Start ===== -->
+  <button class="xc wf xf ie ld vg sr gh tr g sa ta _a" @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+    @scroll.window="scrollTop = (window.pageYOffset > 50) ? true : false" :class="{ 'uc' : scrollTop }">
+    <svg class="uh se qd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path
+        d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+    </svg>
+  </button>
+
+  <!-- ====== Back To Top End ===== -->
+
+  <script>
+    //  Pricing Table
+    const setup = () => {
+      return {
+        isNavOpen: false,
+
+        billPlan: 'monthly',
+
+        plans: [
+          {
+            name: 'Starter',
+            price: {
+              monthly: 29,
+              annually: 29 * 12 - 199,
+            },
+            features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
+          },
+          {
+            name: 'Growth Plan',
+            price: {
+              monthly: 59,
+              annually: 59 * 12 - 100,
+            },
+            features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
+          },
+          {
+            name: 'Business',
+            price: {
+              monthly: 139,
+              annually: 139 * 12 - 100,
+            },
+            features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
+          },
+        ],
+      };
+    };
+  </script>
+  <script defer src="bundle.js"></script>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Easy Way </title>
+  <link rel="icon" href="images/Logo.png">
+  <link href="style.css" rel="stylesheet">
+  <!-- Font Awesome for WhatsApp icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+   
+
+</head>
+<body class="p-4" style="margin-top:9rem">
+<!-- ===== Header Start ===== -->
+  <div x-data="{ 
+    page: 'home', 
+    darkMode: true, 
+    stickyMenu: false, 
+    navigationOpen: false, 
+    scrollTop: false, 
+    hideTopBar: false 
+  }" x-init="
+    darkMode = JSON.parse(localStorage.getItem('darkMode'));
+    $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)));
+    window.addEventListener('scroll', () => {
+      hideTopBar = window.scrollY > 50; // hide after 50px scroll
+    });
+  " :class="{'b eh': darkMode === true}">
+
+    <div class="k"  style="background-color: white;    border-bottom: 2px solid black;">
+
+      <header class="g s r vd ya cj" :class="{ 'hh sm _k bl ll' : stickyMenu }"
+        @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false" style="background-color: rgb(255, 255, 255);">
+
+        <!-- 🔹 Top Black Bar (Always Visible) -->
+        <div class="bg-dark text-white">
+          <div class="container d-flex justify-content-between align-items-center py-1">
+            <!-- Left side: contact info -->
+            <div style="font-size: 19px;">
+              <small><i class="fa-solid fa-envelope me-2"></i>easywayspokengroup@gmail.com</small>
+              <small class="ms-3"><i class="fa-solid fa-phone me-2"></i> +91 9595753575</small>
+            </div>
+
+            <!-- Right side: social media icons -->
+            <div style="font-size: 17px;">
+              <a href="#" class="me-3" style="color: #1877F2;"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/easyway_spoken_english_class?igsh=MTF5cTNiNHI3cTF1eg==" target="_blank"
+                class="me-3" style="color: #E4405F;"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://wa.me/9595753575" class="me-3" style="color: #25D366;" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a href="#" style="color: #0A66C2;"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 🔹 End Top Bar -->
+
+        <!-- 🔹 Main Header -->
+        <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+          <div class="vd to/4 tc wf yf">
+            <a href="index.html" class="holographic-logo">
+              <img class="om" src="images/Gall/Logo.png" alt="Logo Light" style="    height: 109px;" />
+            </a>
+
+            <!-- Hamburger Toggle BTN -->
+            <button class="po rc" @click="navigationOpen = !navigationOpen">
+              <span class="rc i pf re pd">
+                <span class="du-block h q vd yc" style="background: white;">
+                  <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
+                  <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
+                  <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+                </span>
+                <span class="du-block h q vd yc lf">
+                  <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
+                  <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
+                </span>
+              </span>
+            </button>
+            <!-- End Hamburger -->
+          </div>
+
+          <!-- Navigation -->
+          <div class="vd wo/4 sd qo f ho oo wf yf" :class="{ 'd rm sr td ud qg ug jc yh': navigationOpen }"
+            style="justify-content: right;margin-left:20px ;">
+            <nav style="font-size: 20px; font-weight: 900;">
+              <ul class="tc _o sf yo cg ep" style="text-decoration: none !important;">
+                <li><a href="index.html" class="xl" :class="{ 'mk': page === 'home' }" style="color:black;text-decoration: none !important;">Home</a></li>
+                <li><a href="index.html#features" class="xl" style="color:black;text-decoration: none !important;">About</a></li>
+                <li><a href="Gallary.html" class="xl" style="color:black;text-decoration: none !important;" >Gallery</a></li>
+                 <li><a href="index.html#Testimonials" class="xl"
+                    style="color:black;text-decoration: none !important;">Reviews</a></li>
+                <li><a href="index.html#support" class="xl" style="color:black;text-decoration: none !important;">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- 🔹 End Main Header -->
+
+      </header>
+    </div>
+  </div>
+  <!-- ===== Header End ===== -->
+
+
+<div class="text-center mb-4">
+  <h2 class="fw-bold" style="font-size: 4rem; color: #043995;">Gallery</h2>
+  <div style="width: 80px; height: 3px; background-color: black; margin: 8px auto; border-radius: 2px;"></div>
+</div>
+
+
+  <!-- Image Gallery -->
+  <div class="container">
+    <div class="row g-3" id="gallery"></div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content" style="margin-top: 8rem;">
+        <div class="modal-body text-center">
+          <img src="" id="modalImage" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Gallery Script -->
+<script>
+  const gallery = document.getElementById("gallery");
+
+  // ✅ Loop to create 16 images dynamically
+  for (let i = 1; i <= 16; i++) {
+    gallery.innerHTML += `
+      <div class="col-lg-4 col-md-6 mb-3">
+        <img src="./images/Gall/${i}.jpeg" 
+             class="rounded shadow-sm gallery-img" 
+             data-bs-toggle="modal" 
+             data-bs-target="#imageModal" 
+             data-bs-img="./images/Gall/${i}.jpeg" 
+             alt="Gallery Image ${i}">
+      </div>`;
+  }
+
+  // ✅ Show clicked image in modal
+  const imageModal = document.getElementById('imageModal');
+  const modalImage = document.getElementById('modalImage');
+
+  imageModal.addEventListener('show.bs.modal', function (event) {
+    const triggerImg = event.relatedTarget;
+    modalImage.src = triggerImg.getAttribute('data-bs-img');
+  });
+</script>
+  <script defer src="bundle.js"></script>
+
+</body>
+</html>
