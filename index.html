@@ -1088,9 +1088,17 @@ Reach out, enquire, and start learning with confidence`}">
                 </div>
 
                 <div class="vd to/2">
-                  <label class="rc ac" for="subject">Subject</label>
-                  <input type="text" name="subject" id="subject" placeholder="Type your subject"
-                    class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi" required />
+                  <label class="rc ac" for="subject">Enquiry For Class</label>
+                  <select
+                    name="subject"
+                    id="subject"
+                    class="vd ph sg zk xm _g ch pm hm dm dn em pl/50 xi mi"
+                    required
+                  >
+                    <option value="" disabled selected>Select batch type</option>
+                    <option value="online">Online Batch</option>
+                    <option value="offline">Offline Batch</option>
+                  </select>
                 </div>
               </div>
 
@@ -1120,29 +1128,30 @@ Reach out, enquire, and start learning with confidence`}">
             </form>
           </div>
 
-          <script>
-            function sendToWhatsApp(event) {
-              event.preventDefault();
+         <script>
+  function sendToWhatsApp(event) {
+    event.preventDefault();
 
-              let fullname = document.getElementById("fullname").value;
-              let email = document.getElementById("email").value;
-              let phone = document.getElementById("phone").value;
-              let subject = document.getElementById("subject").value;
-              let message = document.getElementById("message").value;
+    let fullname = document.getElementById("fullname").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let batch = document.getElementById("subject").value; // dropdown value
+    let message = document.getElementById("message").value;
 
-              let whatsappNumber = "+919595753575"; // Replace with your WhatsApp number (with country code, no + or spaces)
+    let whatsappNumber = "919595753575"; // country code only, no +
 
-              let url = "https://wa.me/" + whatsappNumber + "?text="
-                + "*New Enquiry*" + "%0a%0a"
-                + "*Name:* " + fullname + "%0a"
-                + "*Email:* " + email + "%0a"
-                + "*Phone:* " + phone + "%0a"
-                + "*Subject:* " + subject + "%0a"
-                + "*Message:* " + message;
+    let url = "https://wa.me/" + whatsappNumber + "?text="
+      + "*New Enquiry*%0a%0a"
+      + "*Name:* " + fullname + "%0a"
+      + "*Email:* " + email + "%0a"
+      + "*Phone:* " + phone + "%0a"
+      + "*Batch Type:* " + batch + "%0a"
+      + "*Message:* " + message;
 
-              window.open(url, "_blank").focus();
-            }
-          </script>
+    window.open(url, "_blank");
+  }
+</script>
+
 
         </div>
       </div>
